@@ -25,6 +25,6 @@ RUN rm -rf __pycache__ && \
     apt install -y libosmesa6-dev libgl1-mesa-glx libglfw3 && \
     apt install -y patchelf && \
     apt-get install -y libglew-dev && \
-
+    apt-get install -y cmake libopenmpi-dev python3-dev zlib1g-dev
 
 CMD /bin/bash
