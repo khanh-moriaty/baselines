@@ -1,0 +1,2 @@
+tensorflow-gpu==1.14
+mujoco-py<2.2,>=2.1
