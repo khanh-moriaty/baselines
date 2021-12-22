@@ -27,6 +27,6 @@ RUN rm -rf __pycache__ && \
     apt-get install -y libglew-dev && \
     apt-get install -y cmake libopenmpi-dev python3-dev zlib1g-dev
 
-RUN     pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD /bin/bash
