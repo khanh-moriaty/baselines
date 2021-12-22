@@ -19,6 +19,7 @@ RUN rm -rf __pycache__ && \
     cp -r mujoco210/bin/* /usr/lib/ && \
     mkdir ~/.mujoco && \
     cp -r mujoco210 ~/.mujoco && \
+    ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CODE_DIR}/baselines/mujoco210/bin:/root/.mujoco/mujoco210/bin"
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/content/mujoco210/bin:/root/.mujoco/mujoco210/bin && \
     ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so && \
     apt install -y libosmesa6-dev libgl1-mesa-glx libglfw3 && \
