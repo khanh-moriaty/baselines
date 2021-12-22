@@ -13,7 +13,7 @@ RUN rm -rf __pycache__ && \
     find . -name "*.pyc" -delete && \
     pip install 'tensorflow < 2' && \
     pip install -e .[test] && \
-    apt-get install wget && \
+    apt-get install -y wget && \
     wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz && \
     tar -xf mujoco210-linux-x86_64.tar.gz && \
     cp -r mujoco210/bin/* /usr/lib/ && \
@@ -21,10 +21,10 @@ RUN rm -rf __pycache__ && \
     cp -r mujoco210 ~/.mujoco && \
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/content/mujoco210/bin:/root/.mujoco/mujoco210/bin && \
     ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so && \
-    apt install libosmesa6-dev libgl1-mesa-glx libglfw3 && \
-    apt install patchelf && \
-    apt-get install libglew-dev && \
-    apt-get install cmake libopenmpi-dev python3-dev zlib1g-dev
+    apt install -y libosmesa6-dev libgl1-mesa-glx libglfw3 && \
+    apt install -y patchelf && \
+    apt-get install -y libglew-dev && \
+    apt-get install -y cmake libopenmpi-dev python3-dev zlib1g-dev
 
 
 CMD /bin/bash
