@@ -1,7 +1,18 @@
-FROM python:3.6
+FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
 
 RUN apt-get -y update && apt-get -y install ffmpeg
 # RUN apt-get -y update && apt-get -y install git wget python-dev python3-dev libopenmpi-dev python-pip zlib1g-dev cmake python-opencv
+
+RUN apt-get update && \
+    apt-get install -y build-essential && \
+    apt-get install -y vim git curl wget htop unzip && \
+    apt-get install -y software-properties-common && \
+    yes | add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y python3.6 && \
+    apt-get install -y python3-distutils && \
+    apt-get install -y python3.6-dev && \
+    (curl https://bootstrap.pypa.io/get-pip.py | python3.6)
 
 ENV CODE_DIR /root/code
 
